@@ -1,28 +1,51 @@
-# WebBaboon
+# 🦍 WebBaboon
 
-WebBaboon is a powerful web technology detection tool that crawls websites and identifies the technologies they use. It can detect frameworks, libraries, analytics tools, and other web technologies by analyzing various aspects of web pages.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/)
+[![GitHub issues](https://img.shields.io/github/issues/Mr-b0nzai/webbaboon)](https://github.com/Mr-b0nzai/webbaboon/issues)
 
-## Features
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Mr-b0nzai/webbaboon/main/assets/logo.png" alt="WebBaboon Logo" width="200"/>
+  <p><em>🔍 A powerful web technology detection and analysis tool</em></p>
+</div>
 
-- Detects web technologies through multiple methods:
-  - HTML content and meta tags
-  - JavaScript variables and functions
-  - DOM elements and attributes
-  - HTTP headers
-  - Cookies
-  - Network requests
-  - XHR requests
-  - Script sources
-- Version detection for popular technologies
-- Crawls multiple pages on the same domain
-- Headless operation for fast scanning
-- Detailed signature reporting
+## 📋 Overview
 
-## Installation
+WebBaboon is a sophisticated web technology detection tool that crawls websites and identifies the technologies they use. Whether you're a developer, security researcher, or just curious about what powers your favorite websites, WebBaboon provides detailed insights into frameworks, libraries, analytics tools, and other web technologies.
+
+## ✨ Key Features
+
+- 🕷️ **Multi-method Detection**
+  - HTML content and meta tags analysis
+  - JavaScript variables and functions inspection
+  - DOM elements and attributes scanning
+  - HTTP headers examination
+  - Cookie analysis
+  - Network request monitoring
+  - XHR request tracking
+  - Script source identification
+
+- 📊 **Advanced Capabilities**
+  - Version detection for popular technologies
+  - Multi-page domain crawling
+  - Headless operation for rapid scanning
+  - Comprehensive signature reporting
+  - Low memory footprint
+  - Non-intrusive scanning
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Python 3.6 or higher
+- Google Chrome (for web driver operations)
+- Git
+
+### Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/webbaboon.git
+git clone https://github.com/Mr-b0nzai/webbaboon.git
 cd webbaboon
 ```
 
@@ -31,42 +54,61 @@ cd webbaboon
 pip install -r requirements.txt
 ```
 
-3. Make sure you have Google Chrome installed (required for the web driver).
+## 💻 Usage
 
-## Usage
-
-Basic usage:
+### Basic Scan
 ```bash
 python WebBaboon.py -u example.com
 ```
 
-Specify crawl depth:
+### Advanced Scan with Custom Depth
 ```bash
 python WebBaboon.py -u example.com -m 3
 ```
 
 ### Command Line Options
 
-- `-u, --url`: The URL to analyze (required)
-- `-m, --max-depth`: Maximum number of pages to crawl (default: 1)
+| Option | Description | Default |
+|--------|-------------|---------|
+| `-u, --url` | Target URL to analyze (required) | - |
+| `-m, --max-depth` | Maximum crawl depth | 1 |
+| `-t, --timeout` | Request timeout in seconds | 30 |
+| `-o, --output` | Output file path | stdout |
 
-## Project Structure
+## 🏗️ Project Structure
 
-- `WebBaboon.py`: Main entry point
-- `crawler.py`: Web crawling functionality
-- `detector.py`: Technology detection logic
-- `utils.py`: Helper functions
-- `config.py`: Configuration and constants
-- `technologies.json`: Technology signatures database
+```
+webbaboon/
+├── WebBaboon.py     # Main entry point
+├── crawler.py       # Web crawling engine
+├── detector.py      # Technology detection logic
+├── utils.py         # Helper functions
+├── config.py        # Configuration settings
+└── technologies.json # Technology signatures
+```
 
-## Contributing
+## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-## License
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+## 📝 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## 📬 Contact
+
+Mr-b0nzai - [@Mr_b0nzai](https://twitter.com/Mr_b0nzai)
+
+Project Link: [https://github.com/Mr-b0nzai/webbaboon](https://github.com/Mr-b0nzai/webbaboon)
+
+---
+
+<div align="center">
+  <p>If you find WebBaboon useful, please consider giving it a ⭐️!</p>
+</div> 
