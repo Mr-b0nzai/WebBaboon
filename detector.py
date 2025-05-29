@@ -3,7 +3,7 @@ import re
 from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
-from utils import check_dom_conditions, process_var_name, format_version_check_script
+from utils import check_dom_conditions, process_var_name
 
 class TechnologyDetector:
     def __init__(self, driver: WebDriver, technologies: dict):
@@ -121,20 +121,6 @@ class TechnologyDetector:
             return []
         matched = []
 
-        if not detect_only:
-            version_check = format_version_check_script(tech_name)
-            if version_check:
-                try:
-                    version = self.driver.execute_script(version_check)
-                    if version:
-                        matched.append({
-                            'type': 'js_version',
-                            'detail': f'Version check: {tech_name}',
-                            'version': version
-                        })
-                except Exception as e:
-                    print(f"Error checking version for {tech_name}: {e}")
-
         for var, pattern_str in tech['js'].items():
             try:
                 processed_var = process_var_name(var)
@@ -182,7 +168,7 @@ class TechnologyDetector:
             matched_signatures.extend(self.check_dom(tech_data))
             matched_signatures.extend(self.check_script_src(tech_data))
             matched_signatures.extend(self.check_xhr(tech_data))
-            matched_signatures.extend(self.check_js(tech_data, tech_name, detect_only=True))
+            # matched_signatures.extend(self.check_js(tech_data, tech_name, detect_only=True))
 
             if matched_signatures:
                 detected_techs[tech_name] = {'signatures': matched_signatures}

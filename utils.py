@@ -55,20 +55,3 @@ def get_page_links(driver: WebDriver, base_url: str) -> set:
             links.add(absolute_url)
     
     return links
-
-def format_version_check_script(tech_name: str) -> Optional[str]:
-    """Generate a JavaScript version check script for common technologies."""
-    version_checks = {
-        'jQuery': r'try { return jQuery.fn.jquery; } catch(e) { try { return $.fn.jquery; } catch(e) { return null; } }',
-        'Angular': r'try { return angular.version.full; } catch(e) { return null; }',
-        'Bootstrap': r'try { return jQuery.fn.tooltip.Constructor.VERSION; } catch(e) { return null; }',
-        'Vue.js': r'try { return Vue.version; } catch(e) { return null; }',
-        'React': r'try { return React.version; } catch(e) { return null; }',
-        'Lodash': r'try { return _.VERSION; } catch(e) { return null; }',
-        'Moment.js': r'try { return moment.version; } catch(e) { return null; }',
-        'Alpine.js': r'try { return Alpine.version; } catch(e) { return null; }',
-        'Handlebars': r'try { return Handlebars.VERSION; } catch(e) { return null; }',
-        'Backbone.js': r'try { return Backbone.VERSION; } catch(e) { return null; }',
-        'Ember.js': r'try { return Ember.VERSION; } catch(e) { return null; }'
-    }
-    return version_checks.get(tech_name) 

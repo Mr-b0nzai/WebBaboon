@@ -29,6 +29,7 @@ def display_results(detected_techs):
 
 def main():
     """Main entry point for WebBaboon."""
+    print(ASCII_ART)
     parser = argparse.ArgumentParser(
         description=f"{ASCII_ART}\nWebBaboon is a web technology detection tool that crawls and analyzes websites to identify the technologies they use.",
         formatter_class=argparse.RawDescriptionHelpFormatter
