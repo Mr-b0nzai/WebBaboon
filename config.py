@@ -8,8 +8,8 @@ CHROME_OPTIONS = [
     "--no-sandbox",
     "--disable-dev-shm-usage",
     "--window-size=1920,1080",
-    "--disable-gpu",
-    "--disable-software-rasterizer",
+    # "--disable-gpu",
+    # "--disable-software-rasterizer",
     "--disable-features=NetworkTimeServiceQuerying",
     "--disable-features=VizDisplayCompositor",
     "--log-level=3"
